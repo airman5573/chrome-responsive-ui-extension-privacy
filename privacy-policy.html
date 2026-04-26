@@ -94,32 +94,37 @@
         When you enter a URL and press Go, Responsive Lab loads that URL in iframe previews inside the extension page. The target websites are loaded directly by your browser. Those websites may have their own privacy policies, cookies, analytics, or security controls. Responsive Lab does not control third-party websites.
       </p>
 
-      <h3>5. Sync Scroll Content Script</h3>
+      <h3>5. Capture Mode Fallback</h3>
+      <p>
+        When iframe preview is blocked, the user may choose Capture Mode as a responsive screenshot fallback. Capture Mode opens the requested URL in a temporary top-level Chrome tab, applies the selected device viewport, captures a screenshot, closes the temporary tab, and displays the image locally inside Responsive Lab. Screenshots may contain visible page content, including personal information if it is visible in the page at capture time. Responsive Lab does not upload these screenshots to a remote server.
+      </p>
+
+      <h3>6. Sync Scroll Content Script</h3>
       <p>
         Responsive Lab uses a content script on eligible <code>http://</code> and <code>https://</code> pages to support best-effort scroll synchronization between preview frames. The content script sends only minimal messages such as readiness state and vertical scroll ratio. It does not read or transmit page text, form values, cookies, or page content.
       </p>
 
-      <h3>6. Permissions</h3>
+      <h3>7. Permissions</h3>
       <p>
-        The extension requests Chrome storage permission to save local settings. It also declares <code>http://*/*</code> and <code>https://*/*</code> host permissions so the Sync Scroll content script can run in eligible preview frames. These permissions are used only for the extension features described above.
+        The extension requests Chrome storage permission to save local settings. It also requests Chrome debugger permission only for user-initiated Capture Mode fallback. The debugger permission is used to apply device viewport emulation and capture a screenshot from a temporary tab. The extension also declares <code>http://*/*</code> and <code>https://*/*</code> host permissions so the Sync Scroll content script can run in eligible preview frames. These permissions are used only for the extension features described above.
       </p>
 
-      <h3>7. Remote Servers and Data Sharing</h3>
+      <h3>8. Remote Servers and Data Sharing</h3>
       <p>
         Responsive Lab does not operate a remote server for collecting extension data. The extension does not send your settings, page contents, or browsing data to the developer.
       </p>
 
-      <h3>8. Iframe and Browser Security Limitations</h3>
+      <h3>9. Iframe and Browser Security Limitations</h3>
       <p>
         Some websites block iframe embedding through security headers such as <code>X-Frame-Options</code> or Content Security Policy <code>frame-ancestors</code>. Responsive Lab cannot bypass those protections. When a site blocks iframe rendering, the extension may show a fallback message and an option to open the page in a new tab.
       </p>
 
-      <h3>9. Changes to This Policy</h3>
+      <h3>10. Changes to This Policy</h3>
       <p>
         This policy may be updated if the extension's behavior changes. The effective date at the top of this page will be updated when material changes are made.
       </p>
 
-      <h3>10. Contact</h3>
+      <h3>11. Contact</h3>
       <p>
         For privacy questions about Responsive Lab, contact the developer through the GitHub account that hosts this page.
       </p>
@@ -153,32 +158,37 @@
         사용자가 URL을 입력하고 Go를 누르면 Responsive Lab은 해당 URL을 확장 페이지 안의 iframe 미리보기로 로드합니다. 대상 웹사이트는 브라우저가 직접 로드하며, 해당 웹사이트는 자체 개인정보 처리방침, 쿠키, 분석 도구, 보안 정책을 가질 수 있습니다. Responsive Lab은 제3자 웹사이트를 제어하지 않습니다.
       </p>
 
-      <h3>5. Sync Scroll 콘텐츠 스크립트</h3>
+      <h3>5. Capture Mode fallback</h3>
+      <p>
+        iframe 미리보기가 차단된 경우 사용자는 반응형 스크린샷 fallback으로 Capture Mode를 선택할 수 있습니다. Capture Mode는 요청한 URL을 임시 top-level Chrome 탭에서 열고, 선택한 디바이스 viewport를 적용한 뒤, 스크린샷을 캡처하고, 임시 탭을 닫은 다음, 이미지를 Responsive Lab 안에 로컬로 표시합니다. 스크린샷에는 캡처 시점에 화면에 보이는 페이지 콘텐츠가 포함될 수 있으며, 로그인된 페이지의 개인정보가 보이는 경우 그 정보도 이미지에 포함될 수 있습니다. Responsive Lab은 이러한 스크린샷을 원격 서버로 업로드하지 않습니다.
+      </p>
+
+      <h3>6. Sync Scroll 콘텐츠 스크립트</h3>
       <p>
         Responsive Lab은 미리보기 프레임 간 스크롤 동기화를 위해 eligible <code>http://</code> 및 <code>https://</code> 페이지에서 콘텐츠 스크립트를 사용합니다. 콘텐츠 스크립트는 준비 상태와 세로 스크롤 비율 같은 최소한의 메시지만 보냅니다. 페이지 텍스트, 폼 값, 쿠키, 페이지 콘텐츠를 읽거나 전송하지 않습니다.
       </p>
 
-      <h3>6. 권한</h3>
+      <h3>7. 권한</h3>
       <p>
-        확장 프로그램은 로컬 설정 저장을 위해 Chrome storage 권한을 사용합니다. 또한 Sync Scroll 콘텐츠 스크립트가 eligible 미리보기 프레임에서 실행될 수 있도록 <code>http://*/*</code> 및 <code>https://*/*</code> 호스트 권한을 선언합니다. 이 권한은 위에서 설명한 확장 기능을 위해서만 사용됩니다.
+        확장 프로그램은 로컬 설정 저장을 위해 Chrome storage 권한을 사용합니다. 또한 사용자가 직접 요청한 Capture Mode fallback에서 디바이스 viewport emulation과 임시 탭 스크린샷 캡처를 수행하기 위해 Chrome debugger 권한을 사용합니다. 또한 Sync Scroll 콘텐츠 스크립트가 eligible 미리보기 프레임에서 실행될 수 있도록 <code>http://*/*</code> 및 <code>https://*/*</code> 호스트 권한을 선언합니다. 이 권한은 위에서 설명한 확장 기능을 위해서만 사용됩니다.
       </p>
 
-      <h3>7. 원격 서버와 데이터 공유</h3>
+      <h3>8. 원격 서버와 데이터 공유</h3>
       <p>
         Responsive Lab은 확장 데이터를 수집하기 위한 원격 서버를 운영하지 않습니다. 사용자 설정, 페이지 내용, 방문 데이터를 개발자에게 전송하지 않습니다.
       </p>
 
-      <h3>8. iframe 및 브라우저 보안 제한</h3>
+      <h3>9. iframe 및 브라우저 보안 제한</h3>
       <p>
         일부 웹사이트는 <code>X-Frame-Options</code> 또는 Content Security Policy <code>frame-ancestors</code> 같은 보안 헤더로 iframe 삽입을 차단합니다. Responsive Lab은 이러한 보호 장치를 우회할 수 없습니다. iframe 렌더링이 차단되면 확장 프로그램은 안내 메시지와 새 탭으로 열기 옵션을 표시할 수 있습니다.
       </p>
 
-      <h3>9. 정책 변경</h3>
+      <h3>10. 정책 변경</h3>
       <p>
         확장 프로그램의 동작이 변경되면 이 정책이 업데이트될 수 있습니다. 중요한 변경이 있을 경우 이 페이지 상단의 시행일이 갱신됩니다.
       </p>
 
-      <h3>10. 문의</h3>
+      <h3>11. 문의</h3>
       <p>
         Responsive Lab 개인정보 관련 문의는 이 페이지를 호스팅하는 GitHub 계정을 통해 연락해 주세요.
       </p>
